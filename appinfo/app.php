@@ -49,6 +49,7 @@ if ($snippet !== '') {
 		$policy = new ContentSecurityPolicy();
 		$policy->addAllowedScriptDomain($url);
 		$policy->addAllowedImageDomain($url);
+		$policy->addAllowedConnectDomain($url);
 		$CSPManager->addDefaultPolicy($policy);
 	}
 }
