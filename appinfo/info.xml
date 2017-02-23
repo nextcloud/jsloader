@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<info>
+	<id>jsloader</id>
+	<name>JSLoader</name>
+	<description>
+		This application allows the admin to include JavaScript into all Nextcloud pages for web analytics for example.
+	</description>
+
+	<licence>AGPL</licence>
+	<author>Morris Jobke</author>
+	<version>0.1.2</version>
+
+	<website>https://github.com/nextcloud/jsloader/</website>
+	<bugs>https://github.com/nextcloud/jsloader/issues</bugs>
+	<repository type="git">https://github.com/nextcloud/jsloader.git</repository>
+
+	<dependencies>
+		<nextcloud min-version="12" max-version="12" />
+	</dependencies>
+	<settings>
+		<admin>OCA\JSLoader\Settings\Admin</admin>
+		<admin-section>OCA\JSLoader\Settings\Section</admin-section>
+	</settings>
+</info>
