@@ -33,6 +33,6 @@ style('jsloader', 'admin');
 	<textarea id="jsloader-snippet"><?php print_unescaped($_['snippet']); ?></textarea>
 	<label for="jsloader-url"><?php p($l->t('Domain where external JavaScript is loaded from. This is needed to work with the CSP policy that is in place. It is tried to automatically detect this based on the snippet above if empty.')); ?></label>
 	<input id="jsloader-url" name="jsloader-url" type="text" value="<?php print_unescaped($_['url']); ?>">
-	<button id="jsloader-save" class="btn btn-primary" disabled="disabled">Save</button>
+	<button id="jsloader-save" class="btn btn-primary" disabled="disabled"><?php p($l->t('Save')); ?></button>
 	<span id="jsloader-message" class="msg"></span>
 </div>
