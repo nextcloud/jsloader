@@ -17,6 +17,9 @@
 	<dependencies>
 		<nextcloud min-version="12" max-version="12" />
 	</dependencies>
+
+	<namespace>JSLoader</namespace>
+
 	<settings>
 		<admin>OCA\JSLoader\Settings\Admin</admin>
 		<admin-section>OCA\JSLoader\Settings\Section</admin-section>
