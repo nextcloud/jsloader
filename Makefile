@@ -9,7 +9,7 @@ source_dir=$(build_dir)/source
 sign_dir=$(build_dir)/sign
 package_name=$(app_name)
 cert_dir=$(HOME)/.nextcloud/certificates
-version+=v1.0.1
+version+=1.0.1
 
 all: appstore
 
