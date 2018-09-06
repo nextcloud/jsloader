@@ -16,7 +16,7 @@
 	<repository type="git">https://github.com/nextcloud/jsloader.git</repository>
 
 	<dependencies>
-		<nextcloud min-version="12" max-version="14" />
+		<nextcloud min-version="12" max-version="15" />
 	</dependencies>
 
 	<settings>
