@@ -45,11 +45,14 @@ if ($snippet !== '') {
 	// whitelist the URL to allow loading JS from this external domain
 	$url = $config->getAppValue('jsloader', 'url');
 	if ($url !== '') {
-		$CSPManager = \OC::$server->getContentSecurityPolicyManager();
-		$policy = new ContentSecurityPolicy();
-		$policy->addAllowedScriptDomain($url);
-		$policy->addAllowedImageDomain($url);
-		$policy->addAllowedConnectDomain($url);
-		$CSPManager->addDefaultPolicy($policy);
+		$singleUrlArray = explode(',', $url);
+		foreach ($singleUrlArray as $singleUrl) { 
+			$CSPManager = \OC::$server->getContentSecurityPolicyManager();
+			$policy = new ContentSecurityPolicy();
+			$policy->addAllowedScriptDomain($singleUrl);
+			$policy->addAllowedImageDomain($singleUrl);
+			$policy->addAllowedConnectDomain($singleUrl);
+			$CSPManager->addDefaultPolicy($policy);
+		}
 	}
 }
