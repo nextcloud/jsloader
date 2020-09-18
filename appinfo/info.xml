@@ -5,7 +5,7 @@
 	<summary>Load custom javascript on all Nextcloud pages</summary>
 	<description>This application allows the admin to include JavaScript into all Nextcloud pages for web analytics for example.</description>
 
-	<version>1.3.0</version>
+	<version>1.4.0</version>
 	<licence>agpl</licence>
 	<author>Morris Jobke</author>
 	<namespace>JSLoader</namespace>
@@ -16,7 +16,7 @@
 	<repository type="git">https://github.com/nextcloud/jsloader.git</repository>
 
 	<dependencies>
-		<nextcloud min-version="17" max-version="20" />
+		<nextcloud min-version="18" max-version="21" />
 	</dependencies>
 
 	<settings>
