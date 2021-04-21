@@ -53,8 +53,8 @@ class Admin implements ISettings {
 	 */
 	public function getForm() {
 		$parameters = [
-			'snippet'     => $this->config->getAppValue('jsloader', 'snippet', ''),
-			'url'         => $this->config->getAppValue('jsloader', 'url', ''),
+			'snippet' => $this->config->getAppValue('jsloader', 'snippet', ''),
+			'url' => $this->config->getAppValue('jsloader', 'url', ''),
 			'cachebuster' => $this->config->getAppValue('jsloader', 'cachebuster', '0'),
 		];
 
@@ -78,5 +78,4 @@ class Admin implements ISettings {
 	public function getPriority() {
 		return 70;
 	}
-
 }
