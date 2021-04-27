@@ -1,4 +1,4 @@
-# JavaScript loader app for Nextcloud
+# JavaScript loader app for Nextcloud (with support for CSP-Allowed-Frame)
 
 This application allows the admin to include JavaScript into all Nextcloud pages for web analytics for example.
 

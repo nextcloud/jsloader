@@ -50,6 +50,7 @@ if ($snippet !== '') {
 		$policy->addAllowedScriptDomain($url);
 		$policy->addAllowedImageDomain($url);
 		$policy->addAllowedConnectDomain($url);
+		$policy->addAllowedFrameDomain($url);
 		$CSPManager->addDefaultPolicy($policy);
 	}
 }
