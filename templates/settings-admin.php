@@ -19,10 +19,13 @@
  *
  */
 
+use OCA\JSLoader\AppInfo\Application;
+use OCP\Util;
+
 /** @var array $_ */
 /** @var \OCP\IL10N $l */
-script('jsloader', 'admin');
-style('jsloader', 'admin');
+Util::addScript(Application::APP_ID, 'admin');
+Util::addStyle(Application::APP_ID, 'admin');
 ?>
 
 <div id="jsloader-section" class="section" data-cachebuster="<?php print_unescaped($_['cachebuster']); ?>">

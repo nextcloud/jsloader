@@ -21,29 +21,18 @@
 
 namespace OCA\JSLoader\Controller;
 
+use OCA\JSLoader\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataDownloadResponse;
 use OCP\AppFramework\Http\Response;
-use OCP\IConfig;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\IRequest;
 
 class JSController extends Controller {
-
-	/** @var \OCP\IConfig */
-	protected $config;
-
-	/**
-	 * constructor of the controller
-	 *
-	 * @param string $appName
-	 * @param IRequest $request
-	 * @param IConfig $config
-	 */
-	public function __construct($appName,
-								IRequest $request,
-								IConfig $config) {
-		parent::__construct($appName, $request);
-		$this->config = $config;
+	public function __construct(
+		IRequest $request,
+		private IAppConfig $appConfig) {
+		parent::__construct(Application::APP_ID, $request);
 	}
 
 	/**
@@ -54,9 +43,9 @@ class JSController extends Controller {
 	 * @return Response
 	 */
 	public function script() {
-		$jsCode = $this->config->getAppValue('jsloader', 'snippet', '');
+		$jsCode = $this->appConfig->getAppValueString('snippet', '');
 		if ($jsCode !== '') {
-			$jsCode = '$(document).ready(function() {' . $jsCode . '});';
+			$jsCode = "window.addEventListener('DOMContentLoaded', () => { $jsCode });";
 		}
 		return new DataDownloadResponse($jsCode, 'script', 'text/javascript');
 	}
