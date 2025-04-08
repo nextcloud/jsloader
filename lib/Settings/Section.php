@@ -21,23 +21,15 @@
 
 namespace OCA\JSLoader\Settings;
 
+use OCA\JSLoader\AppInfo\Application;
 use OCP\IL10N;
 use OCP\IURLGenerator;
 use OCP\Settings\IIconSection;
 
 class Section implements IIconSection {
-	/** @var IL10N */
-	private $l;
-	/** @var IURLGenerator */
-	private $url;
-
-	/**
-	 * @param IURLGenerator $url
-	 * @param IL10N $l
-	 */
-	public function __construct(IURLGenerator $url, IL10N $l) {
-		$this->url = $url;
-		$this->l = $l;
+	public function __construct(
+		private IURLGenerator $url,
+		private IL10N $l) {
 	}
 
 	/**
@@ -47,7 +39,7 @@ class Section implements IIconSection {
 	 * @returns string
 	 */
 	public function getID() {
-		return 'jsloader';
+		return Application::APP_ID;
 	}
 
 	/**

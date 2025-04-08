@@ -21,51 +21,39 @@
 
 namespace OCA\JSLoader\Settings;
 
+use OCA\JSLoader\AppInfo\Application;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Services\IAppConfig;
 use OCP\IL10N;
-use OCP\ILogger;
 use OCP\Settings\ISettings;
-use OCP\IConfig;
+use Psr\Log\LoggerInterface;
 
 class Admin implements ISettings {
 
-	/** @var IL10N */
-	private $l;
-
-	/** @var ILogger */
-	private $logger;
-
-	/** @var IConfig */
-	private $config;
-
 	public function __construct(
-		IL10N $l,
-		ILogger $logger,
-		IConfig $config
-	) {
-		$this->l = $l;
-		$this->logger = $logger;
-		$this->config = $config;
-	}
+		private IL10N $l,
+		private LoggerInterface $logger,
+		private IAppConfig $appConfig
+	) {	}
 
 	/**
 	 * @return TemplateResponse
 	 */
 	public function getForm() {
 		$parameters = [
-			'snippet' => $this->config->getAppValue('jsloader', 'snippet', ''),
-			'url' => $this->config->getAppValue('jsloader', 'url', ''),
-			'cachebuster' => $this->config->getAppValue('jsloader', 'cachebuster', '0'),
+			'snippet' => $this->appConfig->getAppValueString('snippet', ''),
+			'url' => $this->appConfig->getAppValueString('url', ''),
+			'cachebuster' => $this->appConfig->getAppValueString('cachebuster', '0'),
 		];
 
-		return new TemplateResponse('jsloader', 'settings-admin', $parameters, '');
+		return new TemplateResponse(Application::APP_ID, 'settings-admin', $parameters, '');
 	}
 
 	/**
 	 * @return string the section ID, e.g. 'sharing'
 	 */
 	public function getSection() {
-		return 'jsloader';
+		return Application::APP_ID;
 	}
 
 	/**
