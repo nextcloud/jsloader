@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (c) 2017 Morris Jobke <hey@morrisjobke.de>
  *
@@ -31,7 +32,8 @@ use OCP\IRequest;
 class JSController extends Controller {
 	public function __construct(
 		IRequest $request,
-		private IAppConfig $appConfig) {
+		private IAppConfig $appConfig,
+	) {
 		parent::__construct(Application::APP_ID, $request);
 	}
 

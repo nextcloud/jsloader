@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (c) 2017 Morris Jobke <hey@morrisjobke.de>
  *

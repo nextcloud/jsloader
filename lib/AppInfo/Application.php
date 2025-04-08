@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -24,7 +25,6 @@ declare(strict_types=1);
 namespace OCA\JSLoader\AppInfo;
 
 use OC\Security\CSP\ContentSecurityPolicy;
-use OC\Security\CSP\ContentSecurityPolicyManager;
 use OC\Security\CSP\ContentSecurityPolicyNonceManager;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
@@ -37,7 +37,7 @@ use OCP\Server;
 use OCP\Util;
 
 class Application extends App implements IBootstrap {
-	const APP_ID = 'jsloader';
+	public const APP_ID = 'jsloader';
 
 	public function __construct(array $urlParams = []) {
 		parent::__construct(self::APP_ID, $urlParams);
