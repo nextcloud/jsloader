@@ -12,7 +12,7 @@ SPDX-FileCopyrightText = "2017 ownCloud translators, 2017-2024 Nextcloud transla
 SPDX-License-Identifier = "AGPL-3.0-only AND (AGPL-3.0-or-later OR AGPL-3.0-only)"
 
 [[annotations]]
-path = ["composer.json", "composer.lock", ".php-cs-fixer.dist.php", ".gitignore", "psalm.xml", "tests/psalm-baseline.xml"]
+path = ["composer.json", "composer.lock", ".php-cs-fixer.dist.php", ".gitignore", "psalm.xml", "tests/psalm-baseline.xml", ".nextcloudignore", "krankerl.toml"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
