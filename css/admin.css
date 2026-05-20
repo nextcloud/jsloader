@@ -3,14 +3,34 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-#jsloader-section label,
-#jsloader-snippet,
-#jsloader-url {
+#jsloader-form{
 	display: block;
-	max-width: 550px;
+	max-width: 650px;
+	padding-top: var(--app-navigation-padding);
 	width: 100%;
+
+	h2 {
+		display: block;
+		line-height: var(--default-clickable-area);
+		padding-inline-start: calc(2* var(--app-navigation-padding) + var(--default-clickable-area) - 30px);
+	}
+
+	.hint {
+		color: var(--color-text-maxcontrast);
+		margin-bottom: calc(2 * var(--default-grid-baseline));
+	}
+
+	input:invalid {
+		border-color: var(--color-element-error);
+	}
+
+	> * {
+		width: 100%;
+	}
 }
 
 #jsloader-snippet {
-	height: 200px;
+	min-width: 100%;
+	min-height: 200px;
+	margin-bottom: calc(2 * var(--default-grid-baseline));
 }

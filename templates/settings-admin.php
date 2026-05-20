@@ -13,14 +13,17 @@ Util::addScript(Application::APP_ID, 'admin');
 Util::addStyle(Application::APP_ID, 'admin');
 ?>
 
-<div id="jsloader-section" class="section" data-cachebuster="<?php print_unescaped($_['cachebuster']); ?>">
+<form id="jsloader-form" class="section" data-cachebuster="<?php print_unescaped($_['cachebuster']); ?>">
 	<h2 class="inlineblock"><?php p($l->t('JavaScript loader')); ?></h2>
-	<p>
+	<label for="jsloader-snippet">
 		<?php p($l->t('Paste the JS code snippet here. It will be loaded on every page.')); ?>
-	</p>
+	</label>
 	<textarea id="jsloader-snippet"><?php print_unescaped($_['snippet']); ?></textarea>
-	<label for="jsloader-url"><?php p($l->t('Domain where external JavaScript is loaded from. This is needed to work with the CSP policy that is in place. It is tried to automatically detect this based on the snippet above if empty.')); ?></label>
-	<input id="jsloader-url" name="jsloader-url" type="text" value="<?php print_unescaped($_['url']); ?>">
-	<button id="jsloader-save" class="btn btn-primary" disabled="disabled"><?php p($l->t('Save')); ?></button>
+	<label for="jsloader-url"><?php p($l->t('Domain where external JavaScript is loaded from.')); ?></label>
+	<input id="jsloader-url" aria-describedby="jsloader-url-hint" name="jsloader-url" type="url" value="<?php print_unescaped($_['url']); ?>">
+	<div id="jsloader-url-hint" class="hint">
+		<?php p($l->t('This is needed to work with the CSP policy that is in place. It is tried to automatically detect this based on the snippet above if empty.')); ?>
+	</div>
+	<button id="jsloader-save" class="btn btn-primary" disabled="disabled" type="submit"><?php p($l->t('Save')); ?></button>
 	<span id="jsloader-message" class="msg"></span>
-</div>
+</form>
