@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <psalm
-    errorLevel="4"
+    errorLevel="1"
     errorBaseline="tests/psalm-baseline.xml"
     findUnusedBaselineEntry="true"
     findUnusedCode="false"
@@ -19,6 +19,7 @@
     <extraFiles>
         <directory name="vendor" />
     </extraFiles>
-    <issueHandlers>
-    </issueHandlers>
+    <stubs>
+        <file name="tests/stubs/oc_security_csp_ContentSecurityPolicyNonceManager.php" />
+    </stubs>
 </psalm>
