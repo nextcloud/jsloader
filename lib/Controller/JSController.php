@@ -28,6 +28,7 @@ class JSController extends Controller {
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
 	 * @PublicPage
+	 * @NoTwoFactorRequired
 	 *
 	 * @return Response
 	 */
